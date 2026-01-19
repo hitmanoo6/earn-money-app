@@ -1,0 +1,83 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Earn Money App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+font-family: Arial;
+text-align: center;
+background: #f5f7ff;
+padding: 20px;
+}
+
+.card {
+background: white;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+max-width: 400px;
+margin: auto;
+}
+
+button {
+background: #4CAF50;
+color: white;
+border: none;
+padding: 15px;
+border-radius: 10px;
+font-size: 16px;
+width: 100%;
+margin-top: 15px;
+}
+
+.balance {
+font-size: 22px;
+margin: 15px;
+color: green;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Welcome To Earn Money App</h2>
+
+<div class="balance">
+Balance: ₹<span id="money">10</span>
+</div>
+
+<button onclick="earn()">Watch Ad & Earn ₹5</button>
+
+<button onclick="withdraw()">Withdraw Money</button>
+
+<p id="msg"></p>
+</div>
+
+<script>
+let balance = 10;
+
+function earn(){
+balance = balance + 5;
+document.getElementById("money").innerHTML = balance;
+document.getElementById("msg").innerHTML = "Reward Added Successfully!";
+}
+
+function withdraw(){
+if(balance >= 100){
+alert("Withdrawal Request Submitted!");
+balance = 0;
+document.getElementById("money").innerHTML = balance;
+}
+else{
+alert("Minimum withdrawal ₹100 required");
+}
+}
+</script>
+
+</body>
+</html>
